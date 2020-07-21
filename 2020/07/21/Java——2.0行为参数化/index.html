@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/7 | Mu、Cat</title>
+  <title>Java——2.0行为参数化 | Mu、Cat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人学习网站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mu、Cat">
-<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
+  <meta name="description" content="Java——2.0行为参数化行为参数化，就是可以帮助你处理频繁的变更的一种软件开发模式。它意味着，给你一段代码，把它准备好但是不执行它，这个代码可以被程序的其他部分调用，意味着可以推迟代码块的执行。Java8中新增了一个概念行为参数化 故事：万恶的甲方某农场食品公司要求你提供一个仓库管理系统，该系统要求能够帮助删选仓库中的苹果。 第一阶段：值传递首先产品经理给出了筛选红苹果的要求你可能会想到这不是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java——2.0行为参数化">
+<meta property="og:url" content="http://yoursite.com/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/index.html">
 <meta property="og:site_name" content="Mu、Cat">
-<meta property="og:description" content="个人学习网站">
+<meta property="og:description" content="Java——2.0行为参数化行为参数化，就是可以帮助你处理频繁的变更的一种软件开发模式。它意味着，给你一段代码，把它准备好但是不执行它，这个代码可以被程序的其他部分调用，意味着可以推迟代码块的执行。Java8中新增了一个概念行为参数化 故事：万恶的甲方某农场食品公司要求你提供一个仓库管理系统，该系统要求能够帮助删选仓库中的苹果。 第一阶段：值传递首先产品经理给出了筛选红苹果的要求你可能会想到这不是">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/Java%E2%80%94%E2%80%94%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96.assets/image-20200721213145952.png">
+<meta property="article:published_time" content="2020-07-21T07:36:14.762Z">
+<meta property="article:modified_time" content="2020-07-21T13:53:33.007Z">
 <meta property="article:author" content="MrCat">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/Java%E2%80%94%E2%80%94%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96.assets/image-20200721213145952.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu、Cat" type="application/atom+xml">
   
@@ -152,130 +156,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java——2.0行为参数化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/21/%E5%A3%B0%E6%98%8E/" class="archive-article-date">
-  	<time datetime="2020-07-21T09:13:45.398Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/21/%E5%A3%B0%E6%98%8E/">声明</a>
+    <h1 class="article-title" itemprop="name">
+      Java——2.0行为参数化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/" class="archive-article-date">
+        
+        <a href="/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/" class="archive-article-date">
   	<time datetime="2020-07-21T07:36:14.762Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/">Java——2.0行为参数化</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java——2-0行为参数化"><a href="#Java——2-0行为参数化" class="headerlink" title="Java——2.0行为参数化"></a>Java——2.0行为参数化</h1><p><strong>行为参数化，就是可以帮助你处理频繁的变更的一种软件开发模式</strong>。它意味着，给你一段代码，把它准备好但是不执行它，这个代码可以被程序的其他部分调用，意味着可以推迟代码块的执行。<br>Java8中新增了一个概念行为参数化</p>
+<h4 id="故事：万恶的甲方"><a href="#故事：万恶的甲方" class="headerlink" title="故事：万恶的甲方"></a>故事：万恶的甲方</h4><p>某农场食品公司要求你提供一个仓库管理系统，该系统要求能够帮助删选仓库中的苹果。</p>
+<p>第一阶段：值传递<br>首先产品经理给出了筛选红苹果的要求<br>你可能会想到这不是使用一个普通的遍历和条件筛选就可以解决的吗</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Apple&gt; <span class="title">listApple</span><span class="params">(List&lt;Apple&gt; apples)</span></span>&#123;</span><br><span class="line">    ArrayList&lt;Apple&gt; apples1 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Apple apple:apples)</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"Green"</span>.equals(apple))&#123;</span><br><span class="line">            apples1.add(apple);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> apples1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>第二阶段：<br>产品经理觉得颜色的分类太少了，下一秒就多了个筛选绿、浅红、大红色苹果的要求。<br>也许有人会想着我们再复制一份第一阶段的方法换个名字就好了。但是要记住代码要尽可能抽象化，要是遇到十种上百种颜色就完了，这时，第二个反应就是将颜色值作为参数传入方法中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Apple&gt; <span class="title">listApple</span><span class="params">(List&lt;Apple&gt; apples,String color)</span></span>&#123;</span><br><span class="line">    ArrayList&lt;Apple&gt; apples1 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Apple apple:apples)</span><br><span class="line">        <span class="keyword">if</span> (color.equals(apple))&#123;</span><br><span class="line">            apples1.add(apple);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> apples1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>第三阶段：<br>当然产品经理的欲望在膨胀，第二天，他想说为什么不能筛选出合格的100g以上大红苹果呢。<br>你可能会马上想到第二阶段的方法，增加一个weight参数如下。这样看起来貌似很不错，但是还远远不够。其实方案糟糕透了，如果果农又增加了形状、大小、产地等条件呢？并且传递参数的时候根本不知道这些参数是什么意思，带来了维护难度和成本。多个||显得笨拙。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Apple&gt; <span class="title">listApple</span><span class="params">(List&lt;Apple&gt; apples,String color,<span class="keyword">int</span> weight)</span></span>&#123;</span><br><span class="line">    ArrayList&lt;Apple&gt; apples1 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Apple apple:apples)</span><br><span class="line">        <span class="keyword">if</span> (color.equals(apple)||apple.getWeight()&gt;weight)&#123;</span><br><span class="line">            apples1.add(apple);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> apples1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第四阶段：行为参数化<br>这时你可能想到了使用类似策略模式的方案，我们传递一个类不就行了吗，定义一个接口filter内部带有一个筛选条件方法。只需要针对苹果的判断条件实现接口方法即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> &lt;Apple&gt; <span class="function">ArrayList <span class="title">filter</span><span class="params">(ArrayList&lt;Apple&gt; apples,SecondDrudge drudge)</span></span>&#123;</span><br><span class="line">       ArrayList&lt;Apple&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span> (T data:apples)&#123;</span><br><span class="line">           <span class="keyword">if</span>(drudge.drudge(data))&#123;</span><br><span class="line">               result.add(data);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="keyword">public</span> FirstDrudge implement Drudge&#123;<span class="comment">//实现1</span></span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">drudge</span><span class="params">(Object data)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="string">"红"</span>.equals(a.getColor());</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br><span class="line"><span class="keyword">public</span> SecondDrudge implement Drudge&#123;<span class="comment">//实现2</span></span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">drudge</span><span class="params">(Object data)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>第五阶段：<br>这是一件很酷的事情，那我们还能做什么吗？如果为了简洁或使用一次性的类就可以使用匿名内部类来实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;Apple&gt; <span class="function">ArrayList <span class="title">filter</span><span class="params">(ArrayList&lt;Apple&gt; apples,SecondDrudge drudge)</span></span>&#123;</span><br><span class="line">       ArrayList&lt;Apple&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span> (T data:apples)&#123;</span><br><span class="line">           <span class="keyword">if</span>(drudge.drudge(data))&#123;</span><br><span class="line">               result.add(data);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       Drudge appleDrudge = <span class="keyword">new</span> Drudge() &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">drudge</span><span class="params">(Apple data)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br><span class="line">       CollectionFilter.filter(apples,drudge)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>第六阶段：对付啰嗦<br>可能会觉得使用匿名内部类太啰嗦，针对这个Java8提供了lambda表达式，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Drudge&lt;Apple&gt; drudge =(Apple a)-&gt;&#123;<span class="keyword">return</span> <span class="string">"红"</span>.equals(a.getColor());&#125;;</span><br><span class="line">    Drudge&lt;Apple&gt; drudge2 =(Apple a)-&gt;a.getWeight()&gt;<span class="number">100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h4><p><img src="Java——行为参数化.assets/image-20200721213145952.png" alt="image-20200721213145952" style="zoom:67%;" />.</p>
+<p><strong>lambda语法</strong>：<code>(“参数”)-&gt;{“返回”;};</code>    或    <code>(“参数”)-&gt;“返回”;</code><br><strong>并且注意的是，lambda只支持接口，接口必须只有一个抽象方法，可带上@FunctionalInterface注解这种接口被称为函数式接口</strong><br>lambda详细内容将在4.0介绍。</p>
+<h4 id="JavaAPI中就有多个例子："><a href="#JavaAPI中就有多个例子：" class="headerlink" title="JavaAPI中就有多个例子："></a>JavaAPI中就有多个例子：</h4><p>Comparator、Runnable、Callable、GUI</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>德莉莎世界第一可爱<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/Java%E2%80%94%E2%80%940.0%E8%B5%B0%E8%BF%9BJava/" class="archive-article-date">
-  	<time datetime="2020-07-18T06:45:20.752Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/07/21/%E5%A3%B0%E6%98%8E/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          声明
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/18/Java%E2%80%94%E2%80%940.0%E8%B5%B0%E8%BF%9BJava/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java——0.0走进Java</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/Java%E2%80%94%E2%80%940.0%E8%B5%B0%E8%BF%9BJava/">Java——0.0走进Java</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/14/Java%E2%80%94%E2%80%941.0%E5%85%B3%E6%B3%A8Java8%E3%80%819%E3%80%8110%E5%8F%8A11%E7%9A%84%E5%8F%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-07-14T09:42:06.969Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/14/Java%E2%80%94%E2%80%941.0%E5%85%B3%E6%B3%A8Java8%E3%80%819%E3%80%8110%E5%8F%8A11%E7%9A%84%E5%8F%98%E5%8C%96/">Java——1.0关注Java8、9、10及11的变化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -298,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

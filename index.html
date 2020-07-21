@@ -154,27 +154,28 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-第二篇博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-声明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/12/%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">第二篇博客</a>
+      <a class="article-title" href="/2020/07/21/%E5%A3%B0%E6%98%8E/">声明</a>
     </h1>
   
 
         
-        <a href="/2020/07/12/%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2020-07-12T00:51:48.630Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-12</time>
+        <a href="/2020/07/21/%E5%A3%B0%E6%98%8E/" class="archive-article-date">
+  	<time datetime="2020-07-21T09:13:45.398Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第二篇博客"><a href="#第二篇博客" class="headerlink" title="第二篇博客"></a>第二篇博客</h1>
+        <p>本系列文参考了书本Java实战（第二版）</p>
+
       
 
       
@@ -186,7 +187,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/12/%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/07/21/%E5%A3%B0%E6%98%8E/">展开全文 >></a>
         </p>
       
 
@@ -216,27 +217,50 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java——2.0行为参数化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/hello-world/">hello-world</a>
+      <a class="article-title" href="/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/">Java——2.0行为参数化</a>
     </h1>
   
 
         
-        <a href="/2020/07/11/hello-world/" class="archive-article-date">
-  	<time datetime="2020-07-11T06:42:17.058Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-11</time>
+        <a href="/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2020-07-21T07:36:14.762Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h1>
+        <h1 id="Java——2-0行为参数化"><a href="#Java——2-0行为参数化" class="headerlink" title="Java——2.0行为参数化"></a>Java——2.0行为参数化</h1><p><strong>行为参数化，就是可以帮助你处理频繁的变更的一种软件开发模式</strong>。它意味着，给你一段代码，把它准备好但是不执行它，这个代码可以被程序的其他部分调用，意味着可以推迟代码块的执行。<br>Java8中新增了一个概念行为参数化</p>
+<h4 id="故事：万恶的甲方"><a href="#故事：万恶的甲方" class="headerlink" title="故事：万恶的甲方"></a>故事：万恶的甲方</h4><p>某农场食品公司要求你提供一个仓库管理系统，该系统要求能够帮助删选仓库中的苹果。</p>
+<p>第一阶段：值传递<br>首先产品经理给出了筛选红苹果的要求<br>你可能会想到这不是使用一个普通的遍历和条件筛选就可以解决的吗</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Apple&gt; <span class="title">listApple</span><span class="params">(List&lt;Apple&gt; apples)</span></span>&#123;</span><br><span class="line">    ArrayList&lt;Apple&gt; apples1 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Apple apple:apples)</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"Green"</span>.equals(apple))&#123;</span><br><span class="line">            apples1.add(apple);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> apples1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二阶段：<br>产品经理觉得颜色的分类太少了，下一秒就多了个筛选绿、浅红、大红色苹果的要求。<br>也许有人会想着我们再复制一份第一阶段的方法换个名字就好了。但是要记住代码要尽可能抽象化，要是遇到十种上百种颜色就完了，这时，第二个反应就是将颜色值作为参数传入方法中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Apple&gt; <span class="title">listApple</span><span class="params">(List&lt;Apple&gt; apples,String color)</span></span>&#123;</span><br><span class="line">    ArrayList&lt;Apple&gt; apples1 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Apple apple:apples)</span><br><span class="line">        <span class="keyword">if</span> (color.equals(apple))&#123;</span><br><span class="line">            apples1.add(apple);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> apples1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第三阶段：<br>当然产品经理的欲望在膨胀，第二天，他想说为什么不能筛选出合格的100g以上大红苹果呢。<br>你可能会马上想到第二阶段的方法，增加一个weight参数如下。这样看起来貌似很不错，但是还远远不够。其实方案糟糕透了，如果果农又增加了形状、大小、产地等条件呢？并且传递参数的时候根本不知道这些参数是什么意思，带来了维护难度和成本。多个||显得笨拙。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;Apple&gt; <span class="title">listApple</span><span class="params">(List&lt;Apple&gt; apples,String color,<span class="keyword">int</span> weight)</span></span>&#123;</span><br><span class="line">    ArrayList&lt;Apple&gt; apples1 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (Apple apple:apples)</span><br><span class="line">        <span class="keyword">if</span> (color.equals(apple)||apple.getWeight()&gt;weight)&#123;</span><br><span class="line">            apples1.add(apple);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> apples1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第四阶段：行为参数化<br>这时你可能想到了使用类似策略模式的方案，我们传递一个类不就行了吗，定义一个接口filter内部带有一个筛选条件方法。只需要针对苹果的判断条件实现接口方法即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> &lt;Apple&gt; <span class="function">ArrayList <span class="title">filter</span><span class="params">(ArrayList&lt;Apple&gt; apples,SecondDrudge drudge)</span></span>&#123;</span><br><span class="line">       ArrayList&lt;Apple&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span> (T data:apples)&#123;</span><br><span class="line">           <span class="keyword">if</span>(drudge.drudge(data))&#123;</span><br><span class="line">               result.add(data);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="keyword">public</span> FirstDrudge implement Drudge&#123;<span class="comment">//实现1</span></span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">drudge</span><span class="params">(Object data)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="string">"红"</span>.equals(a.getColor());</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br><span class="line"><span class="keyword">public</span> SecondDrudge implement Drudge&#123;<span class="comment">//实现2</span></span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">drudge</span><span class="params">(Object data)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>第五阶段：<br>这是一件很酷的事情，那我们还能做什么吗？如果为了简洁或使用一次性的类就可以使用匿名内部类来实现。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;Apple&gt; <span class="function">ArrayList <span class="title">filter</span><span class="params">(ArrayList&lt;Apple&gt; apples,SecondDrudge drudge)</span></span>&#123;</span><br><span class="line">       ArrayList&lt;Apple&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       <span class="keyword">for</span> (T data:apples)&#123;</span><br><span class="line">           <span class="keyword">if</span>(drudge.drudge(data))&#123;</span><br><span class="line">               result.add(data);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       Drudge appleDrudge = <span class="keyword">new</span> Drudge() &#123;</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">drudge</span><span class="params">(Apple data)</span> </span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;;</span><br><span class="line">       CollectionFilter.filter(apples,drudge)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>第六阶段：对付啰嗦<br>可能会觉得使用匿名内部类太啰嗦，针对这个Java8提供了lambda表达式，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Drudge&lt;Apple&gt; drudge =(Apple a)-&gt;&#123;<span class="keyword">return</span> <span class="string">"红"</span>.equals(a.getColor());&#125;;</span><br><span class="line">    Drudge&lt;Apple&gt; drudge2 =(Apple a)-&gt;a.getWeight()&gt;<span class="number">100</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h4><p><img src="Java——行为参数化.assets/image-20200721213145952.png" alt="image-20200721213145952" style="zoom:67%;" />.</p>
+<p><strong>lambda语法</strong>：<code>(“参数”)-&gt;{“返回”;};</code>    或    <code>(“参数”)-&gt;“返回”;</code><br><strong>并且注意的是，lambda只支持接口，接口必须只有一个抽象方法，可带上@FunctionalInterface注解这种接口被称为函数式接口</strong><br>lambda详细内容将在4.0介绍。</p>
+<h4 id="JavaAPI中就有多个例子："><a href="#JavaAPI中就有多个例子：" class="headerlink" title="JavaAPI中就有多个例子："></a>JavaAPI中就有多个例子：</h4><p>Comparator、Runnable、Callable、GUI</p>
+
       
 
       
@@ -248,7 +272,161 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/11/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/07/21/Java%E2%80%94%E2%80%942.0%E8%A1%8C%E4%B8%BA%E5%8F%82%E6%95%B0%E5%8C%96/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java——0.0走进Java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/18/Java%E2%80%94%E2%80%940.0%E8%B5%B0%E8%BF%9BJava/">Java——0.0走进Java</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/18/Java%E2%80%94%E2%80%940.0%E8%B5%B0%E8%BF%9BJava/" class="archive-article-date">
+  	<time datetime="2020-07-18T06:45:20.752Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java——0-0走进Java"><a href="#Java——0-0走进Java" class="headerlink" title="Java——0.0走进Java"></a>Java——0.0走进Java</h1><h2 id="Java技术体系"><a href="#Java技术体系" class="headerlink" title="Java技术体系"></a>Java技术体系</h2><p>广义上，运行在Java虚拟机上的语言以及相关的程序都属于Java技术体系的一员。<br>传统意义上，Sun公司官方定义的Java技术体系包括如下几个部分。</p>
+<ul>
+<li>Java程序设计语言</li>
+<li>各种硬件平台上的Java虚拟机</li>
+<li>Class文件格式</li>
+<li>Java API类库</li>
+<li>来自各个商业机构和开源社区的第三方Java类库</li>
+</ul>
+<h4 id="JDK和JRE"><a href="#JDK和JRE" class="headerlink" title="JDK和JRE"></a>JDK和JRE</h4><p>我们把<strong>Java程序设计语言</strong>、<strong>Java虚拟机</strong>、<strong>Java API类库</strong>这三个部分称为<strong>JDK</strong>（Java Development Kit）。JDK用于支持Java开发的最小环境。<br>我们把<strong>Java API类库中的Java SE API</strong>和<strong>Java虚拟机</strong>这两个部分统称为<strong>JRE</strong>（Java Running Environment）。JRE是支持Java运行的标准环境。JDK包含了JRE。</p>
+<h4 id="服务领域划分"><a href="#服务领域划分" class="headerlink" title="服务领域划分"></a>服务领域划分</h4><ul>
+<li>Java Card：支持Java小程序（Applets），运行在小内存设备上（智能卡）的平台。</li>
+<li>Java ME（Micro Edition）：支持Java程序运行在移动终端（手机、PDA等）上的平台。</li>
+<li>Java SE（Standard Edition）：支持面向桌面级应用的Java平台。</li>
+<li>Java EE（Enterprise Edition）：支持使用多层架构的企业应用（如：ERP、CRM应用）的Java平台。</li>
+</ul>
+<h2 id="Java发展史"><a href="#Java发展史" class="headerlink" title="Java发展史"></a>Java发展史</h2><p>Java发展至2020年，共发布了12个版本。如下：</p>
+<p><strong>1991年4月    Java的前身Oak</strong><br>詹姆斯高斯林（James Gosling）博士领导的绿色计划。计划开发一种能在各种消费性产品（如机顶盒、冰箱、收音机等）上运行的架构。该产品为Java语言的前身：<strong>Oak（橡树）</strong>。</p>
+<p><strong>1995年5月23日    Java1.0版本</strong><br>Oak改名为Java，并且在SunWorld大会上正式发布正式版本。<br>第一次提出“Write Once，Run Anywhere”的口号。</p>
+<p><strong>1996年1月23日    JDK1.0</strong><br>JDK1.0发布，Java语言拥有了第一个正式版本的运行环境。<br>提供了一个纯属解释执行的Java虚拟机实现（Sun Classic VM）。<br>JDK1.0代表技术有：Java虚拟机、Applet、AWT等。</p>
+<p><strong>1997年4月    JDK1.1    –基础</strong><br>JDK1.1发布，Java拥有了一些最基础的技术支撑点。<br>后续一共发布了1.10~1.18九个版本，JDK1.1.4之后，各个版本都有了名字<br>JDK1.1代表技术有：JAR文件格式、JDBC、JavaBeans、RMI。<br>语法上出现了：内部类（Inner Class）和反射（Reflection）。</p>
+<p><strong>1998年12月4日    JDK1.2（Playground竞技场）    –里程碑</strong><br>JDK1.2发布，将Java分成三个方向，J2SE、J2EE、J2ME。<br>虚拟机中第一次内置了JIT（Just In Time）编译器（JDK1.2中曾经并存过三个虚拟机，Classic VM、HotSpot VM、Exact VM，其中Exact VM只在Solaris平台出现过，后面两个都是内置JIT编译）。后续又发布了两个小版本JDk1.2.1和JDK1.2.2。<br>JDK1.2代表技术有：EJB、Java Plug-in、Java IDL、Swing等。<br>语法上出现了：strictfp关键字和Collections集合类</p>
+<p><strong>2000年5月8日    JDK1.3（Kestrel美洲红隼）</strong><br>JDK1.3发布，主要改进类库如数学运算等<br>HotStop成为Java1.3版本后Sun JDK的默认虚拟机</p>
+<p><strong>2002年2月13日    JDK1.4（Merlin灰背红隼）    –成熟</strong><br>JDK1.4是Java正式走向成熟的版本。<br>IMBM、Compaq、Fujitsu、SAS、Symbian等公司都有参与甚至实现自己的JDK1.4。至今的Spring、Hibernate、Struts能直接运行在JDK1.4。后续发布1.4.1、1.4.2<br>JDK1.4代表技术有：正则表达式、异常链、NIO、日志类、XML解析器、XSLT转换器</p>
+<p><strong>2004年9月30日    JDK1.5（Tiger老虎）    –改进</strong><br>JDK1.5发布，语法出现大改进<br>JDK1.5语法上出现了例如：自动装箱、泛型、动态注解、枚举、可变长参数、遍历循环（foreach）等语法。<br>虚拟机和API层面上，改进了Java内存模型（Java Memory，JMM）、提供了java.util.concurrent并发包。</p>
+<p><strong>2006年12月11日    JDK1.6（Mustang野马）</strong><br>JDK1.6发布，更改了J2SE、J2ME、J2EE命名方式，对虚拟机内部及算法进行改进<br>提供了动态语法支持，提供编译API、微型API和HTTP服务器API。</p>
+<p><strong>2009年2月19日    JDK1.7（Dolphin海豚）</strong><br>由于各种原因，未能达到目标<br>4月20日sun被oracle收购。</p>
+<p><strong>2013年9月    JDK1.8</strong><br>继续完成了部分JDK1.7未能完成的任务<br>Lambda表达式，函数式编程的理念</p>
+<p><strong>下面是表格整合版</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/18/Java%E2%80%94%E2%80%940.0%E8%B5%B0%E8%BF%9BJava/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java——1.0关注Java8、9、10及11的变化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/14/Java%E2%80%94%E2%80%941.0%E5%85%B3%E6%B3%A8Java8%E3%80%819%E3%80%8110%E5%8F%8A11%E7%9A%84%E5%8F%98%E5%8C%96/">Java——1.0关注Java8、9、10及11的变化</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/14/Java%E2%80%94%E2%80%941.0%E5%85%B3%E6%B3%A8Java8%E3%80%819%E3%80%8110%E5%8F%8A11%E7%9A%84%E5%8F%98%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2020-07-14T09:42:06.969Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java——1-0关注Java8、9、10及11的变化"><a href="#Java——1-0关注Java8、9、10及11的变化" class="headerlink" title="Java——1.0关注Java8、9、10及11的变化"></a>Java——1.0关注Java8、9、10及11的变化</h1><p>函数式编程</p>
+<h2 id="1-1为何要关注Java的变化"><a href="#1-1为何要关注Java的变化" class="headerlink" title="1.1为何要关注Java的变化"></a>1.1为何要关注Java的变化</h2><p>首先谈谈java的历史：</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/14/Java%E2%80%94%E2%80%941.0%E5%85%B3%E6%B3%A8Java8%E3%80%819%E3%80%8110%E5%8F%8A11%E7%9A%84%E5%8F%98%E5%8C%96/">展开全文 >></a>
         </p>
       
 
